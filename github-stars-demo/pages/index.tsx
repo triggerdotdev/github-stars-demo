@@ -1,19 +1,23 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { GetStarsInput } from "./GetStarsInput";
 
 const Home: NextPage = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
-        <title>Create Next App</title>
+        <title>Github Star Demo</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
         <h1 className="text-6xl font-bold">Look to the stars</h1>
 
-        <p className="mt-3 text-2xl">Enter a repo name</p>
+        <p className="mt-3 text-2xl">
+          Enter the name of a Github repo to see how many stars it has.
+        </p>
+        <GetStarsInput />
       </main>
 
       <footer className="flex h-10 w-full items-center justify-center border-t">
