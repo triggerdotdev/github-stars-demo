@@ -12,31 +12,22 @@ const Home: NextPage = () => {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" />
       </Head>
 
-      <div
-        className="w-full overflow-hidden absolute top-0"
-        style={{ height: "100vh" }}
-      >
+      <div className="w-full overflow-hidden absolute h-screen top-0">
         <Image
           className="animate-pulse 1s"
           src="/github-star-field.svg"
           alt="Star field large"
           layout="fill"
           objectFit="cover"
-          objectPosition="top"
         />
       </div>
-
-      <div
-        className="w-full overflow-hidden absolute top-0"
-        style={{ height: "100vh" }}
-      >
+      <div className="w-full overflow-hidden absolute top-0 h-screen">
         <Image
           className="animate-pulse"
           src="/github-star-field-small.svg"
           alt="Star field small"
           layout="fill"
           objectFit="cover"
-          objectPosition="top"
         />
       </div>
 
