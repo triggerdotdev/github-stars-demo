@@ -9,7 +9,10 @@ module.exports = {
        fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
       },
+      dropShadow: {
+        '2xl': '0 0 5px rgba(211, 172, 83, 0.8)',
     },
+  }
   },
   plugins: [],
 }
