@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { GithubLogo } from "./GithubLogo";
 import { StarCount } from "./StarCount";
 
@@ -11,6 +11,18 @@ export function Main() {
   const [inputValue, setInputValue] = useState("");
   const [inputError, setInputError] = useState<string | null>(null);
   const [orgRepo, setOrgRepo] = useState<OwnerRepo | null>(null);
+
+  const handleClick = useCallback((value: string) => {
+    setInputValue(value);
+    const [owner, repo] = value.split("/");
+    if (!owner || !repo) {
+      setOrgRepo(null);
+      setInputError("Invalid input");
+      return;
+    }
+    setOrgRepo({ owner, repo });
+    setInputError(null);
+  }, []);
 
   return (
     <main className="flex w-full flex-1 flex-col items-center justify-top p-20 text-center z-10">
@@ -39,17 +51,18 @@ export function Main() {
         <button
           className="bg-blue-500 transition hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r"
           onClick={() => {
-            const [owner, repo] = inputValue.split("/");
-            if (owner && repo) {
-              setOrgRepo({ owner, repo });
-              setInputError(null);
-            } else {
-              setInputError("Invalid repo name");
-              setOrgRepo(null);
-            }
+            handleClick(inputValue);
           }}
         >
           Get Stars
+        </button>
+        <button
+          className="bg-blue-500 transition hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r"
+          onClick={() => {
+            handleClick("prisma/prisma");
+          }}
+        >
+          Prisma/Prisma
         </button>
         {inputError && (
           <div className="absolute bottom-0 left-0 right-0">
