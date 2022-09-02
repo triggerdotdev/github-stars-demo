@@ -9,8 +9,8 @@ type OwnerRepo = {
 
 export function Main() {
   const [inputValue, setInputValue] = useState("");
+  const [inputError, setInputError] = useState<string | null>(null);
   const [orgRepo, setOrgRepo] = useState<OwnerRepo | null>(null);
-  const error = "Help";
 
   return (
     <main className="flex w-full flex-1 flex-col items-center justify-top p-20 text-center z-10">
@@ -42,22 +42,24 @@ export function Main() {
             const [owner, repo] = inputValue.split("/");
             if (owner && repo) {
               setOrgRepo({ owner, repo });
+              setInputError(null);
+            } else {
+              setInputError("Invalid repo name");
+              setOrgRepo(null);
             }
-
-            // onSubmit(orgRepo);
           }}
         >
           Get Stars
         </button>
-      </div>
-      {/* {status === "error" && (
-        <div className="absolute bottom-0 left-0 right-0">
-          <div className="left-[calc(50%-165px)] animate-bounce absolute top-16 bg-rose-50 px-2 py-1 text-white p-2 rounded">
-            <div className="h-2 w-2 bg-rose-50 absolute -top-1 left-[calc(50%-6px)] rotate-45" />
-            <p className="text-rose-500">Oops, {error.message}</p>
+        {inputError && (
+          <div className="absolute bottom-0 left-0 right-0">
+            <div className="left-[calc(50%-165px)] animate-bounce absolute top-16 bg-rose-50 px-2 py-1 text-white p-2 rounded">
+              <div className="h-2 w-2 bg-rose-50 absolute -top-1 left-[calc(50%-6px)] rotate-45" />
+              <p className="text-rose-500">Oops, {inputError}</p>
+            </div>
           </div>
-        </div>
-      )} */}
+        )}
+      </div>
     </main>
   );
 }
