@@ -9,6 +9,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Github Star Demo</title>
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" />
       </Head>
 
       <div
@@ -26,11 +27,11 @@ const Home: NextPage = () => {
       </div>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold text-slate-100">
+        <h1 className="text-6xl font-bold font-poppins text-slate-100">
           Look to the stars!
         </h1>
 
-        <p className="mt-3 text-2xl text-slate-400">
+        <p className="mt-3 text-2xl font-poppins text-slate-400">
           Enter the name of a Github repo to see how many stars it has.
         </p>
         <GetStarsInput />
