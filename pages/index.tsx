@@ -11,7 +11,6 @@ const Home: NextPage = () => {
       <Head>
         <title>Github Star Demo</title>
         <link rel="icon" href="/favicon.ico" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" />
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-top p-20 text-center z-10">
