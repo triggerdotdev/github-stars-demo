@@ -14,27 +14,8 @@ const Home: NextPage = () => {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" />
       </Head>
 
-      <div className="w-full overflow-hidden absolute h-screen top-0">
-        <Image
-          className="animate-[pulse_3s_ease-in-out_infinite]"
-          src="/github-star-field.svg"
-          alt="Star field large"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
-      <div className="w-full overflow-hidden absolute top-0 h-screen">
-        <Image
-          className="animate-pulse"
-          src="/github-star-field-small.svg"
-          alt="Star field small"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
-
-      <main className="flex w-full flex-1 flex-col items-center justify-top p-20 text-center">
-        <div className="flex flex-col items-center justify-top w-96 h-96 bg-red-500 z-50 mb-10 pt-10">
+      <main className="flex w-full flex-1 flex-col items-center justify-top p-20 text-center z-10">
+        <div className="flex flex-col items-center justify-top w-96 h-96 bg-red-500 mb-10 pt-10">
           {true ? (
             <StarCount
               starCount={100}
@@ -56,7 +37,7 @@ const Home: NextPage = () => {
         <GetStarsInput />
       </main>
 
-      <footer className="flex z-30 h-10 w-full items-center justify-center bg-gradient-to-r from-[#4669E5] via-[#2B52DE] to-[#644DF5]">
+      <footer className="flex h-10 w-full items-center justify-center bg-gradient-to-r from-[#4669E5] via-[#2B52DE] to-[#644DF5]">
         <a
           className="flex items-center text-sm justify-center gap-2 text-slate-50"
           href="https://apihero.run"
@@ -72,6 +53,23 @@ const Home: NextPage = () => {
           />
         </a>
       </footer>
+
+      <div className="w-full overflow-hidden absolute h-screen top-0">
+        <Image
+          className="animate-[pulse_3s_ease-in-out_infinite]"
+          src="/github-star-field.svg"
+          alt="Star field large"
+          layout="fill"
+          objectFit="cover"
+        />
+        <Image
+          className="animate-pulse"
+          src="/github-star-field-small.svg"
+          alt="Star field small"
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
     </div>
   );
 };
