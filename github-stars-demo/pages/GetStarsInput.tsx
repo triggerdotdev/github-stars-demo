@@ -36,25 +36,28 @@ export function GetStarsInput() {
 
   return (
     <>
-      <form className="flex flex-col items-center justify-center w-full mt-8 px-20 text-center">
+      <form className="relative flex items-center justify-center w-full mt-8">
         <input
-          className="border-2 border-gray-300 p-2 rounded-lg"
+          className="bg-slate-100 p-2 w-72 pl-3 font-mono rounded-l placeholder:text-slate-400"
           type="text"
-          placeholder="Repo name"
+          placeholder="Enter a repo (org/repo)"
           value={repoName}
           onChange={(e) => setRepoName(e.target.value)}
         />
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+          className="bg-blue-500 transition hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r"
           type="submit"
           onClick={handleSubmit}
         >
-          Get Stars
+          {loading ? <span>Loading...</span> : <span>Get Stars</span>}
         </button>
+        {error && (
+          <div className="left-[calc(50%-165px)] animate-bounce absolute top-16 bg-rose-50 px-2 py-1 text-white p-2 rounded">
+            <div className="h-2 w-2 bg-rose-50 absolute -top-1 left-[calc(50%-6px)] rotate-45" />
+            <p className="text-rose-500">Oops, I couldn't find that one!</p>
+          </div>
+        )}
       </form>
-      {loading && <p>Loading...</p>}
-      {error && <p className="text-red-500">{error}</p>}
-      {stars > 0 && <p>{stars} stars</p>}
     </>
   );
 }
