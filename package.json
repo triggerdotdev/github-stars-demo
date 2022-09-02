@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apihero/github": "^1.1.4-beta.5",
     "next": "latest",
     "react": "18.1.0",
     "react-dom": "18.1.0"
