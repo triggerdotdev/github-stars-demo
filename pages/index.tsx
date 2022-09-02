@@ -5,6 +5,7 @@ import { StarCount } from "./components/StarCount";
 import { GetStarsInput } from "./components/GetStarsInput";
 import { GithubLogo } from "./components/GithubLogo";
 import { APIHeroProvider } from "./apihero/react";
+import { HeroStarCount } from "./components/HeroStarCount";
 
 const Home: NextPage = () => {
   const error = "Something went wrong";
@@ -19,7 +20,7 @@ const Home: NextPage = () => {
       <main className="flex w-full flex-1 flex-col items-center justify-top p-20 text-center z-10">
         <div className="flex flex-col items-center justify-top w-full h-96  mb-10 pt-10">
           {true ? (
-            <StarCount repo="jsonhero-web" owner="apihero-run" />
+            <HeroStarCount repo="jsonhero-web" owner="apihero-run" />
           ) : (
             <GithubLogo />
           )}
@@ -31,7 +32,7 @@ const Home: NextPage = () => {
         <p className="mt-3 text-2xl font-poppins text-slate-400">
           Enter the name of a <b>Github repo</b> to see how many stars it has.
         </p>
-        <GetStarsInput onSubmit={(org, repo) => console.log(org, repo)} />
+        <GetStarsInput onSubmit={(orgRepo) => console.log(orgRepo)} />
         <div className="absolute bottom-0 left-0 right-0">
           {error && (
             <div className="left-[calc(50%-165px)] animate-bounce absolute top-16 bg-rose-50 px-2 py-1 text-white p-2 rounded">
