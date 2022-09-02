@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { StarCount } from "./components/StarCount";
 import { GetStarsInput } from "./GetStarsInput";
 
 const Home: NextPage = () => {
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
 
       <div className="w-full overflow-hidden absolute h-screen top-0">
         <Image
-          className="animate-pulse 1s"
+          className="animate-pulse"
           src="/github-star-field.svg"
           alt="Star field large"
           layout="fill"
@@ -31,7 +32,8 @@ const Home: NextPage = () => {
         />
       </div>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+      <main className="flex w-full flex-1 flex-col items-center justify-top p-20 text-center">
+        <StarCount />
         <h1 className="text-6xl font-bold font-poppins text-slate-100">
           Look to the stars!
         </h1>
