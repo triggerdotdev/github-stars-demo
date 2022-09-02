@@ -16,6 +16,7 @@ const Home: NextPage = () => {
         style={{ height: "100vh" }}
       >
         <Image
+          className="animate-pulse 4s"
           src="/github-star-field.svg"
           alt="API Hero Logo"
           layout="fill"
