@@ -4,6 +4,7 @@ import Image from "next/image";
 import { StarCount } from "./components/StarCount";
 import { GetStarsInput } from "./components/GetStarsInput";
 import { GithubLogo } from "./components/GithubLogo";
+import { APIHeroProvider } from "./apihero/react";
 
 const Home: NextPage = () => {
   const error = "Something went wrong";
@@ -18,12 +19,7 @@ const Home: NextPage = () => {
       <main className="flex w-full flex-1 flex-col items-center justify-top p-20 text-center z-10">
         <div className="flex flex-col items-center justify-top w-full h-96 bg-red-500/50 mb-10 pt-10">
           {true ? (
-            <StarCount
-              starCount={100}
-              repo="github-stars-demo"
-              org="apihero-run"
-              status="loading"
-            />
+            <StarCount repo="jsonhero-web" owner="apihero-run" />
           ) : (
             <GithubLogo />
           )}
@@ -83,4 +79,10 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default function App() {
+  return (
+    <APIHeroProvider>
+      <Home />
+    </APIHeroProvider>
+  );
+}
