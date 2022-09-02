@@ -3,8 +3,13 @@ import Head from "next/head";
 import Image from "next/image";
 import { StarCount } from "./components/StarCount";
 import { GetStarsInput } from "./components/GetStarsInput";
+import { GithubLogo } from "./components/GithubLogo";
 
 const Home: NextPage = () => {
+  const hasStarCount = usePanelPosition({
+    hasStars: false,
+  });
+
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#020922]  to-[#2a273f]">
       <Head>
@@ -33,7 +38,13 @@ const Home: NextPage = () => {
       </div>
 
       <main className="flex w-full flex-1 flex-col items-center justify-top p-20 text-center">
-        <StarCount />
+        <div className="flex flex-col items-center justify-top w-96 h-96 bg-red-500 z-50 mb-10 pt-10">
+          {hasStarCount ? (
+            <StarCount starCount={100} repoName={"github-stars-demo"} />
+          ) : (
+            <GithubLogo />
+          )}
+        </div>
         <h1 className="text-6xl font-bold font-poppins text-slate-100">
           Look to the stars!
         </h1>

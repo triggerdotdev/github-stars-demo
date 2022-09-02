@@ -18,13 +18,16 @@ export function GetStarsInput() {
     setError("");
     setStars(0);
     try {
-      const response = await fetch("/orgs/{org}/repos", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ repoName }),
-      });
+      const response = await fetch(
+        "https://api.github.com/repos/{org}/{repo}/stargazers",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ repoName }),
+        }
+      );
       const { stars } = await response.json();
       setStars(stars);
     } catch (e: any) {
