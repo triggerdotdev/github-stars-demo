@@ -34,7 +34,7 @@ export function createEndpoint<TProps, TResponseBody, THeaders>(
             params: props,
           }),
           headers: {
-            Authorization: `token cl7kh5t2v97512w8cgnel3491e`,
+            Authorization: `token cl6ev8x4n0047jrrz3qslq7md`,
           },
         });
 
