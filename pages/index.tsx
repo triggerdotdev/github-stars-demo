@@ -6,6 +6,8 @@ import { GetStarsInput } from "./components/GetStarsInput";
 import { GithubLogo } from "./components/GithubLogo";
 
 const Home: NextPage = () => {
+  const error = "Something went wrong";
+
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#020922]  to-[#2a273f]">
       <Head>
@@ -33,7 +35,15 @@ const Home: NextPage = () => {
         <p className="mt-3 text-2xl font-poppins text-slate-400">
           Enter the name of a <b>Github repo</b> to see how many stars it has.
         </p>
-        <GetStarsInput />
+        <GetStarsInput onSubmit={(org, repo) => console.log(org, repo)} />
+        <div className="absolute bottom-0 left-0 right-0">
+          {error && (
+            <div className="left-[calc(50%-165px)] animate-bounce absolute top-16 bg-rose-50 px-2 py-1 text-white p-2 rounded">
+              <div className="h-2 w-2 bg-rose-50 absolute -top-1 left-[calc(50%-6px)] rotate-45" />
+              <p className="text-rose-500">Oops, I couldn't find that one!</p>
+            </div>
+          )}
+        </div>
       </main>
 
       <footer className="flex h-10 w-full items-center justify-center bg-gradient-to-r from-[#4669E5] via-[#2B52DE] to-[#644DF5]">
