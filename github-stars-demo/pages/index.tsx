@@ -5,7 +5,7 @@ import { GetStarsInput } from "./GetStarsInput";
 
 const Home: NextPage = () => {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center bg-black">
+    <div className="relative flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#020922]  to-[#2a273f]">
       <Head>
         <title>Github Star Demo</title>
         <link rel="icon" href="/favicon.ico" />
@@ -17,9 +17,23 @@ const Home: NextPage = () => {
         style={{ height: "100vh" }}
       >
         <Image
-          className="animate-pulse 4s"
+          className="animate-pulse 1s"
           src="/github-star-field.svg"
-          alt="API Hero Logo"
+          alt="Star field large"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="top"
+        />
+      </div>
+
+      <div
+        className="w-full overflow-hidden absolute top-0"
+        style={{ height: "100vh" }}
+      >
+        <Image
+          className="animate-pulse"
+          src="/github-star-field-small.svg"
+          alt="Star field small"
           layout="fill"
           objectFit="cover"
           objectPosition="top"
@@ -32,7 +46,7 @@ const Home: NextPage = () => {
         </h1>
 
         <p className="mt-3 text-2xl font-poppins text-slate-400">
-          Enter the name of a Github repo to see how many stars it has.
+          Enter the name of a <b>Github repo</b> to see how many stars it has.
         </p>
         <GetStarsInput />
       </main>
