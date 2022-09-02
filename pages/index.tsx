@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-top p-20 text-center z-10">
-        <div className="flex flex-col items-center justify-top w-96 h-96 bg-red-500 mb-10 pt-10">
+        <div className="flex flex-col items-center justify-top w-full h-96 bg-red-500/50 mb-10 pt-10">
           {true ? (
             <StarCount
               starCount={100}
