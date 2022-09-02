@@ -20,7 +20,7 @@ export function StarCount({ owner, repo }: { owner: string; repo: string }) {
       ) : status === "error" ? (
         <span>Something went wrong: {error.message}</span>
       ) : (
-        <h2>{data?.stargazers_count} stars</h2>
+        <h2>{data.stargazers_count} stars</h2>
       )}
     </>
   );
