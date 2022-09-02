@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { StarCount } from "./components/StarCount";
-import { GetStarsInput } from "./GetStarsInput";
+import { GetStarsInput } from "./components/GetStarsInput";
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
       <div className="w-full overflow-hidden absolute h-screen top-0">
         <Image
-          className="animate-pulse"
+          className="animate-[pulse_3s_ease-in-out_infinite]"
           src="/github-star-field.svg"
           alt="Star field large"
           layout="fill"
