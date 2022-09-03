@@ -36,7 +36,7 @@ export function Main() {
           <GithubLogo />
         )}
       </div>
-      <h1 className="text-6xl font-bold font-poppins text-slate-100">
+      <h1 className="text-6xl font-bold font-poppins text-slate-100 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
         Look to the stars!
       </h1>
 
