@@ -36,7 +36,7 @@ export function Main() {
           <GithubLogo />
         )}
       </div>
-      <h1 className="text-6xl font-bold font-poppins text-slate-100 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+      <h1 className="text-6xl font-bold font-poppins text-slate-100 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-pink-600">
         Look to the stars!
       </h1>
 
@@ -45,7 +45,7 @@ export function Main() {
       </h2>
       <div className="relative flex items-center justify-center w-full mt-8">
         <input
-          className="bg-slate-100 p-2 w-72 pl-3 font-mono rounded-l placeholder:text-slate-400"
+          className="bg-slate-100 p-2 w-72 pl-3 font-mono rounded-l placeholder:text-slate-400 focus:shadow-[0_0px_60px_15px_rgba(255,255,255,0.3)] transition focus:outline-none"
           type="text"
           placeholder="Enter a repo (org/repo)"
           value={inputValue}
