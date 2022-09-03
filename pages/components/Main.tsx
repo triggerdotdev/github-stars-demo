@@ -73,7 +73,7 @@ export function Main() {
       </div>
       <div className="flex flex-grow flex-col items-center justify-center w-full">
         <p className="text-slate-400 text-base mb-4">
-          Or check out these examples:
+          Or check out some examples:
         </p>
         <div className="flex gap-2">
           <button
