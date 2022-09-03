@@ -62,16 +62,18 @@ export function Main() {
 
         {inputError && (
           <div className="absolute bottom-0 left-0 right-0">
-            <div className="left-[calc(50%-165px)] animate-bounce absolute top-16 bg-rose-50 px-2 py-1 text-white p-2 rounded">
-              <div className="h-2 w-2 bg-rose-50 absolute -top-1 left-[calc(50%-6px)] rotate-45" />
-              <p className="text-rose-500">Oops, {inputError}</p>
+            <div className="left-[calc(50%-187px)] animate-bounce absolute -top-20 bg-rose-50 px-2 py-1 text-white p-2 rounded">
+              <div className="h-2 w-2 bg-rose-50 absolute -bottom-1 left-[calc(50%-4px)] rotate-45" />
+              <p className="text-rose-500">
+                Oops, {inputError}. Check the format is 'org/repo'
+              </p>
             </div>
           </div>
         )}
       </div>
       <div className="flex flex-grow flex-col items-center justify-center w-full">
         <p className="text-slate-400 text-base mb-4">
-          Or check out one of these examples:
+          Or check out these examples:
         </p>
         <div className="flex gap-2">
           <button
