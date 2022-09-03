@@ -11,6 +11,9 @@ export function Main() {
   const [inputValue, setInputValue] = useState("");
   const [inputError, setInputError] = useState<string | null>(null);
   const [orgRepo, setOrgRepo] = useState<OwnerRepo | null>(null);
+  const nextjs = "vercel/next.js";
+  const prisma = "prisma/prisma";
+  const freeCodeCamp = "freeCodeCamp/freeCodeCamp";
 
   const handleClick = useCallback((value: string) => {
     setInputValue(value);
@@ -25,7 +28,7 @@ export function Main() {
   }, []);
 
   return (
-    <main className="flex w-full flex-1 flex-col items-center justify-top p-20 text-center z-10">
+    <main className="flex w-full flex-1 flex-col items-center justify-top p-20 pb-0 text-center z-10">
       <div className="flex flex-col items-center justify-top w-full h-96  mb-10 pt-10">
         {orgRepo ? (
           <StarCount repo={orgRepo.repo} owner={orgRepo.owner} />
@@ -56,14 +59,7 @@ export function Main() {
         >
           Get Stars
         </button>
-        <button
-          className="bg-blue-500 transition hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r"
-          onClick={() => {
-            handleClick("prisma/prisma");
-          }}
-        >
-          Prisma/Prisma
-        </button>
+
         {inputError && (
           <div className="absolute bottom-0 left-0 right-0">
             <div className="left-[calc(50%-165px)] animate-bounce absolute top-16 bg-rose-50 px-2 py-1 text-white p-2 rounded">
@@ -72,6 +68,37 @@ export function Main() {
             </div>
           </div>
         )}
+      </div>
+      <div className="flex flex-grow flex-col items-center justify-center w-full">
+        <p className="text-slate-400 text-base mb-4">
+          Or check out one of these examples:
+        </p>
+        <div className="flex gap-2">
+          <button
+            className="bg-blue-500 transition hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={() => {
+              handleClick(nextjs);
+            }}
+          >
+            {nextjs}
+          </button>
+          <button
+            className="bg-blue-500 transition hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={() => {
+              handleClick(freeCodeCamp);
+            }}
+          >
+            {freeCodeCamp}
+          </button>
+          <button
+            className="bg-blue-500 transition hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            onClick={() => {
+              handleClick(prisma);
+            }}
+          >
+            {prisma}
+          </button>
+        </div>
       </div>
     </main>
   );
