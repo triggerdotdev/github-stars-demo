@@ -36,11 +36,11 @@ export function Main() {
           <GithubLogo />
         )}
       </div>
-      <h1 className="text-6xl font-bold font-poppins text-slate-100 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-pink-600">
+      <h1 className="md:text-6xl font-bold font-poppins text-slate-100 text-4xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-pink-600">
         Look to the stars!
       </h1>
 
-      <h2 className="mt-3 text-2xl font-poppins text-slate-400">
+      <h2 className="mt-3 md:text-2xl font-poppins text-slate-400 text-xl">
         Enter the name of a <b>Github repo</b> to see how many stars it has.
       </h2>
       <div className="relative flex items-center justify-center w-full mt-8">
@@ -52,7 +52,7 @@ export function Main() {
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button
-          className="bg-blue-500 transition hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r"
+          className="bg-blue-500 transition hover:bg-blue-700 text-white whitespace-nowrap font-bold py-2 px-4 rounded-r"
           onClick={() => {
             handleClick(inputValue);
           }}
@@ -75,9 +75,9 @@ export function Main() {
         <p className="text-slate-400 text-base mb-4">
           Or check out some examples:
         </p>
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap justify-center">
           <button
-            className="bg-blue-500 transition hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 transition font-mono hover:bg-blue-700 text-white py-2 px-4 rounded"
             onClick={() => {
               handleClick(nextjs);
             }}
@@ -85,7 +85,7 @@ export function Main() {
             {nextjs}
           </button>
           <button
-            className="bg-blue-500 transition hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 transition font-mono hover:bg-blue-700 text-white py-2 px-4 rounded"
             onClick={() => {
               handleClick(freeCodeCamp);
             }}
@@ -93,7 +93,7 @@ export function Main() {
             {freeCodeCamp}
           </button>
           <button
-            className="bg-blue-500 transition hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 transition font-mono hover:bg-blue-700 text-white py-2 px-4 rounded"
             onClick={() => {
               handleClick(prisma);
             }}
