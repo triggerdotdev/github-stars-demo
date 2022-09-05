@@ -1,4 +1,4 @@
-import { ApiHeroEndpoint, repos } from "@apihero/github";
+import { ApiHeroEndpoint } from "@apihero/github";
 import {
   QueryClient,
   QueryClientProvider,
@@ -34,11 +34,19 @@ export function createEndpoint<TProps, TResponseBody, THeaders>(
             params: props,
           }),
           headers: {
-            Authorization: `token cl6ev8x4n0047jrrz3qslq7md`,
+            Authorization: `token ${process.env.NEXT_PUBLIC_APIHERO_PROJECT_KEY}`,
           },
         });
 
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+
         return res.json();
+      },
+      {
+        refetchOnWindowFocus: false,
+        retry: false,
       }
     );
 
