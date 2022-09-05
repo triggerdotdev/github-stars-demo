@@ -2,7 +2,7 @@ import { repos } from "@apihero/github";
 import { createEndpoint } from "../apihero/react";
 import Image from "next/image";
 
-const useGetRepository = createEndpoint(repos.getRepos);
+const useGetRepository = createEndpoint(repos.getRepo);
 
 export function StarCount({ owner, repo }: { owner: string; repo: string }) {
   const { data, status, error } = useGetRepository({

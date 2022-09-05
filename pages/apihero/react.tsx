@@ -1,4 +1,4 @@
-import { ApiHeroEndpoint } from "@apihero/github";
+import { ApiHeroEndpoint } from "@apihero/core";
 import {
   QueryClient,
   QueryClientProvider,
