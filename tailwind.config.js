@@ -11,8 +11,8 @@ module.exports = {
       },
       dropShadow: {
         '2xl': '0 0 5px rgba(211, 172, 83, 0.8)',
-    },
-    keyframes: {
+      },
+      keyframes: {
         starAnimation: {
           '0%': { transform: 'rotate(0.0deg)' },
           '10%': { transform: 'rotate(4deg)' },
@@ -23,11 +23,15 @@ module.exports = {
           '60%': { transform: 'rotate(0.0deg)' },
           '100%': { transform: 'rotate(0.0deg)' },
         },
+        starEntrance: {
+          '0%': { transform: 'rotate(-540deg) scale(0) opacity: 0' },
+          '100%': { transform: 'rotate(0) scale(1); opacity: 1' },
+          }
       },
       animation: {
-        'star-animation': 'starAnimation 2s linear infinite',
+        'star-animation': 'starEntrance 0.6s ease-out both, starAnimation 2s linear infinite',
+        },
       },
-  }
-  },
+    }, 
   plugins: [],
 }
