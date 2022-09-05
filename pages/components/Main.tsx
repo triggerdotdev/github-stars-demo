@@ -72,7 +72,7 @@ export function Main() {
           </div>
         )}
       </div>
-      <div className="flex flex-grow flex-col items-center justify-center w-full">
+      <div className="flex flex-grow flex-col items-center justify-center w-full m-8 p-2">
         <p className="text-slate-400 text-base mb-4">
           Or check out some examples:
         </p>
