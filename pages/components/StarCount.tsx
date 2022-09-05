@@ -1,5 +1,5 @@
 import { repos } from "@apihero/github";
-import { createEndpoint } from "../apihero/react";
+import { createEndpoint } from "@apihero/react";
 import Image from "next/image";
 
 const useGetRepository = createEndpoint(repos.getRepo);
