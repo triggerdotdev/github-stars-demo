@@ -62,10 +62,11 @@ export function Main() {
 
         {inputError && (
           <div className="absolute bottom-0 left-0 right-0">
-            <div className="left-[calc(50%-187px)] animate-bounce absolute -top-20 bg-rose-50 px-2 py-1 text-white p-2 rounded">
+            <div className="left-[calc(50%-192px)] animate-bounce absolute -top-20 bg-rose-50 px-2 py-1 text-white p-2 rounded">
               <div className="h-2 w-2 bg-rose-50 absolute -bottom-1 left-[calc(50%-4px)] rotate-45" />
               <p className="text-rose-500">
-                Oops, {inputError}. Check the format is 'org/repo'
+                Oops, {inputError}. Check the format is:{" "}
+                <span className="font-mono text-blue-500">org/repo</span>
               </p>
             </div>
           </div>
