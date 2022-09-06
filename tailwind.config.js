@@ -19,10 +19,15 @@ module.exports = {
           '80%': { transform: 'rotate(20deg) scale(1.01)' },
           '99%': { transform: 'rotate(0deg) scale(1)' },
           '100%': { filter: 'opacity(1)' },
+          },
+           logoFade: {
+          '0%': { filter: 'opacity(100)' },
+          '100%': { filter: 'opacity(0)' },
           }
       },
       animation: {
         'star-animation': 'starEntrance 0.6s ease-out both',
+        'logo-fade': 'logoFade 0.6s ease-out both',
         },
       },
     }, 
