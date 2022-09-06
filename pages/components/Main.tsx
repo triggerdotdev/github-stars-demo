@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { GithubLogo } from "./GithubLogo";
+import { Spinner } from "./Spinner";
 import { StarCount } from "./StarCount";
 
 type OwnerRepo = {

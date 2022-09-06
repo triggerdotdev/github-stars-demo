@@ -1,7 +1,7 @@
 import { repos } from "@apihero/github";
 import { createEndpoint } from "@apihero/react";
 import Image from "next/image";
-import { GithubLogo } from "./GithubLogo";
+import { Spinner } from "./Spinner";
 
 const useGetRepository = createEndpoint(repos.getRepo);
 
@@ -15,11 +15,8 @@ export function StarCount({ owner, repo }: { owner: string; repo: string }) {
     <>
       <div className="flex h-full w-full flex-col text-2xl mb-5 items-center justify-top">
         {status === "loading" ? (
-          <div className="relative w-96 h-96 animate-logo-fade">
-            <GithubLogo />
-            {/* <p className="flex absolute align-middle items-centre">
-              "Loading..."
-            </p> */}
+          <div className="relative w-96 h-96">
+            <Spinner />
           </div>
         ) : status === "error" ? (
           <span>Something went wrong: {error.message}</span>

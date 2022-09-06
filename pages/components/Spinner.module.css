@@ -1,0 +1,23 @@
+@keyframes spinner {
+        0% {
+          transform: translate3d(-50%, -50%, 0) rotate(0deg);
+        }
+        100% {
+          transform: translate3d(-50%, -50%, 0) rotate(360deg);
+        }
+      }
+      .loader {
+        animation: 0.5s linear infinite spinner;
+        animation-play-state: inherit;
+        border: solid 5px #180527;
+        border-bottom-color: #FFDA25;
+        border-radius: 100%;
+        content: "";
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        will-change: transform;
+      }
