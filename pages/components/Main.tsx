@@ -28,7 +28,7 @@ export function Main() {
   }, []);
 
   return (
-    <main className="flex w-full flex-1 flex-col items-center justify-top p-5 pb-0 text-center z-10 pt-12 md:pt-22 lg:pt-28">
+    <main className="flex w-full flex-1 flex-col items-center justify-top p-5 pb-0 text-center z-10 pt-8 md:pt-10 lg:pt-12">
       <div className="flex flex-col items-center justify-top w-full h-72 md:h-80 lg:h-96 mb-10 pt-10">
         {orgRepo ? (
           <StarCount repo={orgRepo.repo} owner={orgRepo.owner} />
@@ -75,7 +75,7 @@ export function Main() {
           </div>
         )}
       </div>
-      <div className="flex flex-grow flex-col items-center justify-center w-full m-8 p-2">
+      <div className="flex flex-col items-center justify-center w-full m-8 p-2">
         <p className="text-slate-400 text-base mb-4">
           Or check out some examples:
         </p>
