@@ -10,7 +10,7 @@ module.exports = {
         'poppins': ['Poppins', 'sans-serif'],
       },
       dropShadow: {
-        '2xl': '0 0 5px rgba(211, 172, 83, 0.8)',
+        '2xl': '0 0 5px rgba(159, 219, 239, 0.8)',
       },
       keyframes: {
         starEntrance: {
