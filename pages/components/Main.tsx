@@ -28,8 +28,8 @@ export function Main() {
   }, []);
 
   return (
-    <main className="flex w-full flex-1 flex-col items-center justify-top p-5 pb-0 text-center z-10">
-      <div className="flex flex-col items-center justify-top w-full h-72 md:h-96 mb-10 pt-10">
+    <main className="flex w-full flex-1 flex-col items-center justify-top p-5 pb-0 text-center z-10 pt-12 md:pt-22 lg:pt-28">
+      <div className="flex flex-col items-center justify-top w-full h-72 md:h-80 lg:h-96 mb-10 pt-10">
         {orgRepo ? (
           <StarCount repo={orgRepo.repo} owner={orgRepo.owner} />
         ) : (
@@ -42,8 +42,9 @@ export function Main() {
         Look to the stars!
       </h1>
 
-      <h2 className="mt-3 md:text-2xl font-poppins text-slate-400 text-xl">
-        Enter the name of a <b>GitHub repo</b> to see how many stars it has.
+      <h2 className="mt-3 md:text-2xl font-poppins text-slate-300 text-xl pl-10 pr-10">
+        Enter the name of a <b>GitHub repository</b> to see how many stars it
+        has.
       </h2>
       <div className="relative flex items-center justify-center w-full mt-8">
         <input
