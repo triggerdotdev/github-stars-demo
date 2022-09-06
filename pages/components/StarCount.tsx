@@ -1,6 +1,7 @@
 import { repos } from "@apihero/github";
 import { createEndpoint } from "@apihero/react";
 import Image from "next/image";
+import { GithubLogo } from "./GithubLogo";
 
 const useGetRepository = createEndpoint(repos.getRepo);
 
@@ -12,25 +13,19 @@ export function StarCount({ owner, repo }: { owner: string; repo: string }) {
 
   return (
     <>
-      <div className="flex h-full w-full items-center flex-col text-2xl font-bold font-poppins text-slate-100 mb-5">
+      <div className="flex h-full w-full flex-col text-2xl mb-5 items-center justify-top">
         {status === "loading" ? (
-          <div className="relative">
-            <Image
-              className="drop-shadow-2xl opacity-40"
-              width={400}
-              height={400}
-              src="/github-octocat-logo.png"
-              alt="Github Octocat logo"
-              layout="fixed"
-              objectFit="contain"
-            />
-            <p className="absolute">"Loading..."</p>
+          <div className="relative w-96 h-96 animate-logo-fade">
+            <GithubLogo />
+            {/* <p className="flex absolute align-middle items-centre">
+              "Loading..."
+            </p> */}
           </div>
         ) : status === "error" ? (
           <span>Something went wrong: {error.message}</span>
         ) : (
           <>
-            <p className="text-2xl font-poppins text-slate-100 mb-2">
+            <p className="text-2xl font-mono text-slate-100 mb-2">
               {owner}/{repo}
             </p>
             <div className="relative w-full h-full mb-5">
