@@ -16,7 +16,7 @@ module.exports = {
         starEntrance: {
           '0%': { transform: 'rotate(-540deg) scale(0)' },
           '1%': { filter: 'opacity(0)' },
-          '80%': { transform: 'rotate(20deg) scale(1.1)' },
+          '80%': { transform: 'rotate(20deg) scale(1.01)' },
           '99%': { transform: 'rotate(0deg) scale(1)' },
           '100%': { filter: 'opacity(1)' },
           }
