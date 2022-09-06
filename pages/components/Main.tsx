@@ -29,7 +29,7 @@ export function Main() {
 
   return (
     <main className="flex w-full flex-1 flex-col items-center justify-top p-5 pb-0 text-center z-10">
-      <div className="flex flex-col items-center justify-top w-full mb-10 pt-10">
+      <div className="flex flex-col items-center justify-top w-full h-72 md:h-96 mb-10 pt-10">
         {orgRepo ? (
           <StarCount repo={orgRepo.repo} owner={orgRepo.owner} />
         ) : (
