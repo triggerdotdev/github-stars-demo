@@ -12,7 +12,7 @@ export function StarCount({ owner, repo }: { owner: string; repo: string }) {
 
   return (
     <>
-      <div className="flex h-full flex-col text-2xl font-bold font-poppins text-slate-100 mb-5">
+      <div className="flex h-full w-full items-center flex-col text-2xl font-bold font-poppins text-slate-100 mb-5">
         {status === "loading" ? (
           <div className="relative">
             <Image
@@ -30,24 +30,23 @@ export function StarCount({ owner, repo }: { owner: string; repo: string }) {
           <span>Something went wrong: {error.message}</span>
         ) : (
           <>
-            <div className="relative w-48 h-48 mb-5">
+            <p className="text-2xl font-poppins text-slate-100 mb-2">
+              {owner}/{repo}
+            </p>
+            <div className="relative w-full h-full mb-5">
               <Image
-                className="animate-star-animation"
+                className="animate-star-animation "
                 src="/star-large.svg"
                 alt="Star"
-                width="192"
-                height="192"
+                layout="fill"
               />
-              <h2 className="absolute top-0 left-0">
-                {data.stargazers_count} stars
-              </h2>
             </div>
+            <h2 className="text-3xl font-bold font-poppins text-slate-100 w-full">
+              {Intl.NumberFormat("en-US").format(data.stargazers_count)} stars
+            </h2>
           </>
         )}
       </div>
-      <h1 className="text-xl font-poppins text-slate-100 mb-5">
-        {owner}/{repo}
-      </h1>
     </>
   );
 }
