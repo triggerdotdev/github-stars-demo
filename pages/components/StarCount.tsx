@@ -19,7 +19,12 @@ export function StarCount({ owner, repo }: { owner: string; repo: string }) {
             <Spinner />
           </div>
         ) : status === "error" ? (
-          <span>Something went wrong: {error.message}</span>
+          <div className="flex justify-center flex-col flex-grow">
+            <h2 className="text-8xl font-mono text-slate-100 mb-2">🫤</h2>
+            <p className="text-2xl font-mono text-slate-100 mb-2">
+              Oops, repo {error.message.toLowerCase()}
+            </p>
+          </div>
         ) : (
           <>
             <p className="text-2xl font-mono text-slate-100 mb-2">
