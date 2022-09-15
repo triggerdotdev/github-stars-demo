@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { APIHeroProvider } from "@apihero/react";
 import { BackgroundStars } from "./components/BackgroundStars";
 import { Footer } from "./components/Footer";
 import { Main } from "./components/Main";
@@ -21,8 +20,6 @@ const Home: NextPage = () => {
 
 export default function App() {
   return (
-    <APIHeroProvider>
-      <Home />
-    </APIHeroProvider>
+    <Home />
   );
 }
