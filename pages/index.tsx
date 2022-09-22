@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { APIHeroProvider } from "@apihero/react";
-import { BackgroundStars } from "./components/BackgroundStars";
-import { Footer } from "./components/Footer";
-import { Main } from "./components/Main";
+import { BackgroundStars } from "../components/BackgroundStars";
+import { Footer } from "../components/Footer";
+import { Main } from "../components/Main";
 
 const Home: NextPage = () => {
   return (
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
 export default function App() {
   return (
-    <APIHeroProvider>
+    <APIHeroProvider projectKey="cl82yrzj10406f0kwuefxsaxg">
       <Home />
     </APIHeroProvider>
   );
