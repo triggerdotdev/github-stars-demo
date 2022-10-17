@@ -7,7 +7,7 @@ import { Main } from "../components/Main";
 
 const Home: NextPage = () => {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#020922]  to-[#2a273f]">
+    <div className="relative flex min-h-screen flex-col items-center justify-center sm:bg-gradient-to-b from-[#020922]  to-[#2a273f]">
       <Head>
         <title>GitHub Stars</title>
         <link rel="icon" href="/favicon.ico" />
