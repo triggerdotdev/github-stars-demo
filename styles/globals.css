@@ -3,3 +3,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    background-image: linear-gradient( #020922, #2a273f); 
+    overscroll-behavior: none;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0%;
+  }
+  #__next {
+        background-image: linear-gradient( #020922, #2a273f); 
+  height: 100vh;
+    }
+}
