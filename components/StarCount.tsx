@@ -1,14 +1,19 @@
-import { repos } from "@apihero/github";
-import { createEndpoint } from "@apihero/react";
+import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { Spinner } from "./Spinner";
 
-const useGetRepository = createEndpoint(repos.getRepo);
-
 export function StarCount({ owner, repo }: { owner: string; repo: string }) {
-  const { data, status, error } = useGetRepository({
-    owner,
-    repo,
+  const { data, status, error } = useQuery({
+    queryKey: ["repo", owner, repo],
+    queryFn: async () => {
+      const response = await fetch(
+        "https://api.github.com/repos/" + owner + "/" + repo
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    },
   });
 
   return (
@@ -22,7 +27,8 @@ export function StarCount({ owner, repo }: { owner: string; repo: string }) {
           <div className="flex justify-center flex-col flex-grow">
             <h2 className="text-8xl font-mono text-slate-100 mb-2">🫤</h2>
             <p className="text-2xl font-mono text-slate-100 mb-2">
-              Oops, repo {error.message.toLowerCase()}.
+              {/* Oops, repo {error.message.toLowerCase()}. */}
+              Oops, repo there was an error.
             </p>
           </div>
         ) : (
