@@ -1,9 +1,11 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { APIHeroProvider } from "@apihero/react";
 import { BackgroundStars } from "../components/BackgroundStars";
 import { Footer } from "../components/Footer";
 import { Main } from "../components/Main";
+
+const queryClient = new QueryClient();
 
 const Home: NextPage = () => {
   return (
@@ -21,8 +23,8 @@ const Home: NextPage = () => {
 
 export default function App() {
   return (
-    <APIHeroProvider projectKey="cl82yrzj10406f0kwuefxsaxg">
+    <QueryClientProvider client={queryClient}>
       <Home />
-    </APIHeroProvider>
+    </QueryClientProvider>
   );
 }

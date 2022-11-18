@@ -11,7 +11,7 @@ async function initProxy() {
     const { setupWorker } = await import("apihero-js");
     //update the allow list with the APIs you're using
     await setupWorker({
-      allow: ["https://gateway.apihero.run/*"],
+      allow: ["https://api.github.com/*"],
       url: "https://proxy-staging.apihero.run",
       projectKey,
       env: process.env.NODE_ENV,
